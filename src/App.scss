@@ -1,0 +1,142 @@
+@import "../src/sass/variables.scss";
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//---------------------------------MIXIN--------------------------------------
+@mixin flexprop {
+  border: 4px ridge skyblue;
+  border-radius: 5px;
+}
+// --------------------------------NESTING IN SASS----------------------------
+.container {
+  background-color: white;
+  max-width: 500px;
+  margin: auto;
+  display: inline-block;
+  display: block;
+
+  p {
+    color: black;
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+
+  hr {
+    border-bottom: 1px solid black;
+  }
+}
+// ------------------------------------------------------------------------------------
+
+.heading {
+  margin-top: 25px;
+  font-size: 30px;
+  font-family: serif Georgia;
+  font-weight: bold;
+  text-align: left;
+}
+
+.body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: auto;
+}
+
+.col-25 {
+  float: left;
+  width: 20%;
+  margin-top: 6px;
+  margin-left: 8px;
+  margin: 10px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px #61c5fa;
+  border-color: $border-clr;
+}
+
+input:hover {
+  @include flexprop;
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px #61c5fa;
+  border-color: $border-clr;
+}
+
+textarea:hover {
+  @include flexprop;
+}
+
+select:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px #61c5fa;
+  border-color: $border-clr;
+}
+
+select:hover {
+  @include flexprop;
+}
+
+/* ----------------------------------------------Phone Number-------- */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* ----------------------------------------------------------------- */
+
+//---------------------------------MEDIA QUERY----------------------
+@media (max-width: 400px) {
+  body {
+    color: red;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    color: green;
+  }
+}
